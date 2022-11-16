@@ -128,6 +128,8 @@ def aggregate_features(X_train,mask=False,time=False):
            df[f'{feature}_mask'] = X_train[feature,'mask'].mean(axis=1) 
         if time == True:
             df[f'{feature}_time'] = X_train[feature,'time_since_measured'].mean(axis=1) 
+        df[f'{feature}_range'] = X_train[feature,'mean'].max(axis=1) - X_train[feature,'mean'].min(axis=1)
+        df[f'{feature}_std'] = X_train[feature,'mean'].std(axis=1)
     # df.replace(to_replace=0.0, value=np.nan, inplace=True)
     # df.fillna(df.mean(), inplace=True)
     return df
