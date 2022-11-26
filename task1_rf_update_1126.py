@@ -96,35 +96,35 @@ if __name__ == '__main__':
 
     ####################################################################################
     #
-    # with std 126 features
-    # weights = {0.0: 0.2, 1.0: 1.0}  # 88.58 std 5-std-outlier only for mean
-    # best_tree = RandomForestClassifier(max_depth=50,
-    #                                max_features='sqrt',
-    #                                 random_state=3612,
-    #                                 n_estimators=2000,
-    #                                 min_samples_split=2,
-    #                                 min_samples_leaf=4,
-    #                                 bootstrap= False,
-    #                                 criterion='entropy',
-    #                                 # class_weight='balanced_subsample')
-    #                                 class_weight=weights)
+    # with std 126 features submit score: 90.12
+    weights = {0.0: 0.2, 1.0: 1.0}  # 88.58 std 5-std-outlier only for mean
+    best_tree = RandomForestClassifier(max_depth=50,
+                                   max_features='sqrt',
+                                    random_state=3612,
+                                    n_estimators=2000,
+                                    min_samples_split=2,
+                                    min_samples_leaf=4,
+                                    bootstrap= False,
+                                    criterion='entropy',
+                                    # class_weight='balanced_subsample')
+                                    class_weight=weights)
     # without std 84 features
-    weights = {0.0: 0.25, 1.0: 1.0}  #
-    best_tree = RandomForestClassifier(max_depth=30,
-                                       max_features='sqrt',
-                                       random_state=3612,
-                                       n_estimators=2000,
-                                       min_samples_split=2,
-                                       min_samples_leaf=4,
-                                       bootstrap=False,
-                                       criterion='entropy',
-                                       # class_weight='balanced_subsample')
-                                       class_weight=weights)
+#     weights = {0.0: 0.25, 1.0: 1.0}  #
+#     best_tree = RandomForestClassifier(max_depth=30,
+#                                        max_features='sqrt',
+#                                        random_state=3612,
+#                                        n_estimators=2000,
+#                                        min_samples_split=2,
+#                                        min_samples_leaf=4,
+#                                        bootstrap=False,
+#                                        criterion='entropy',
+#                                        # class_weight='balanced_subsample')
+#                                        class_weight=weights)
 
 
-    print(f'Training dataset has dimention{X_train.shape}.')
+#     print(f'Training dataset has dimention{X_train.shape}.')
 
-    best_tree.fit(X_train, y_train.iloc[:, 0].values.ravel())
+#     best_tree.fit(X_train, y_train.iloc[:, 0].values.ravel())
 
     # plot importance
     ######################################################################
